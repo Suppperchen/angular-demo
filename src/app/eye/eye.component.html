@@ -1,0 +1,15 @@
+<p>please upload every time only one image(retinal-vessel)!</p>
+<input type="file" class="file-input"
+       (change)="onFileSelected($event)">
+
+<div *ngIf="warningMessage!=''">{{warningMessage}}</div>
+<div>
+    <button [disabled] = "imageBase64==''"
+      (click)="sendImage()">
+      Send
+    </button>
+</div>
+
+<img *ngIf="show"
+  [src]="showKIImage"
+/>
