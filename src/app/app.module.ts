@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,12 +8,14 @@ import { KidneyComponent } from './kidney/kidney.component';
 import {CommonModule} from "@angular/common";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-
+import { HandwriteComponent } from './handwrite/handwrite.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
     EyeComponent,
-    KidneyComponent
+    KidneyComponent,
+    HandwriteComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

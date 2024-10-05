@@ -13,6 +13,7 @@ export class EyeComponent {
   warningMessage = '';
   showKIImage = 'data:image/png;base64,';
   show = false;
+  showSpinner = false;
 
     constructor(private http: HttpClient) {}
 
@@ -37,7 +38,9 @@ export class EyeComponent {
       this.show = false;
     }
     sendImage():void{
+      this.show = false;
       if(this.imageBase64!=''){
+        this.showSpinner = true;
         let index = this.imageBase64.indexOf(',');
         const basestring = this.imageBase64.substring(index+1);
         var dataJson = {"image":basestring}
@@ -45,6 +48,7 @@ export class EyeComponent {
         upload$.subscribe(res =>{
           this.showKIImage = 'data:image/png;base64,'+res.KIImage;
           this.show = true;
+          this.showSpinner = false;
 
         })
       }

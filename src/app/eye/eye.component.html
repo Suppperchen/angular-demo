@@ -10,6 +10,16 @@
     </button>
 </div>
 
+<div *ngIf="showSpinner">
+  <p>please wait!</p>
+  <mat-spinner color="warn"></mat-spinner>
+
+</div>
+
 <img *ngIf="show"
   [src]="showKIImage"
+/>
+
+<img *ngIf="show"
+  [src]="imageBase64"
 />

@@ -1,0 +1,23 @@
+<h4>Please Add your signature here</h4>
+<canvas #canvas1 width="300" height="300"  (click)="startDrawing()"></canvas>
+
+
+<div class="buttons flex justify-between">
+  <button  [disabled]="cheakEmpty" (click)="clearPad()">Clear</button>
+  <button  [disabled]="cheakEmpty" (click)="savePad()">Get Prediction</button>
+</div>
+
+<div *ngIf="output!==''">
+  <p>The prediction is : {{output}}</p>
+</div>
+
+
+<div *ngIf="show">
+  <p>waiting the prediction!</p>
+  <mat-spinner color="warn"></mat-spinner>
+
+</div>
+
+
+
+
