@@ -1,1 +1,26 @@
-<p>kidney works!</p>
+<p>please upload every time only one image (MRT)!</p>
+<input type="file" class="file-input"
+       (change)="onFileSelected($event)">
+
+<div *ngIf="warningMessage!=''">{{warningMessage}}</div>
+<div>
+    <button [disabled] = "imageBase64==''"
+      (click)="sendImage()">
+      Send
+    </button>
+</div>
+
+<div *ngIf="showSpinner">
+  <p>please wait!</p>
+  <mat-spinner color="warn"></mat-spinner>
+
+</div>
+
+<img *ngIf="show"
+  [src]="showKIImage"
+/>
+
+<img *ngIf="show"
+  [src]="imageBase64"
+/>
+
