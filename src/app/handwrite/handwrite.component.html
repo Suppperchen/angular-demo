@@ -1,5 +1,5 @@
 <h4>Please Add your signature here</h4>
-<canvas #canvas1 width="300" height="300"  (click)="startDrawing()"></canvas>
+<canvas #canvas1 width="300" height="300"  (mouseout)="startDrawing()"  (click)="startDrawing()"></canvas>
 
 
 <div class="buttons flex justify-between">
@@ -13,8 +13,8 @@
 
 
 <div *ngIf="show">
-  <p>waiting the prediction!</p>
-  <mat-spinner color="warn"></mat-spinner>
+  <mat-spinner style="margin:0 auto;"
+                     mode="indeterminate" color="warn"></mat-spinner>
 
 </div>
 

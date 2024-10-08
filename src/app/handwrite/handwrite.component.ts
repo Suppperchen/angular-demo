@@ -25,7 +25,9 @@ export class HandwriteComponent implements OnInit{
 
 
   startDrawing() {
-    this.cheakEmpty = false;
+    if (!this.sig.isEmpty()){
+      this.cheakEmpty = false;
+    }
   }
 
 

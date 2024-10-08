@@ -1,21 +1,16 @@
-<p>please upload every time only one image(retinal-vessel)!</p>
-<input type="file" class="file-input"
-       (change)="onFileSelected($event)">
-
-<div *ngIf="warningMessage!=''">{{warningMessage}}</div>
+<div *ngIf="!showSpinner">
+<h4>Please upload every time only one image (retinal-vessel)!</h4>
 <div>
+  <input type="file" class="file-input"
+       (change)="onFileSelected($event)">
     <button [disabled] = "imageBase64==''"
       (click)="sendImage()">
       Send
     </button>
 </div>
+<div *ngIf="warningMessage!=''">{{warningMessage}}</div>
 
-<div *ngIf="showSpinner">
-  <p>please wait!</p>
-  <mat-spinner color="warn"></mat-spinner>
-
-</div>
-
+<div style="color:red;" *ngIf="showError!=''">{{showError}}</div>
 <img *ngIf="show"
   [src]="showKIImage"
 />
@@ -23,3 +18,13 @@
 <img *ngIf="show"
   [src]="imageBase64"
 />
+
+</div>
+
+<div *ngIf="showSpinner">
+  <p>please wait!</p>
+  <mat-spinner style="margin:0 auto;"
+                     mode="indeterminate" color="warn"></mat-spinner>
+
+</div>
+

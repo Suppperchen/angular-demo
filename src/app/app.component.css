@@ -1,0 +1,16 @@
+div.container {
+  text-align: center;
+}
+
+ul.myUL {
+  display: inline-block;
+  text-align: left;
+  color: #3399ff;
+  padding: 20px;
+}
+
+li.myLI {
+  background: #cce5ff;
+  color: darkblue;
+  margin: 5px;
+}

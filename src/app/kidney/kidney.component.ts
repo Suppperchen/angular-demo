@@ -12,8 +12,10 @@ export class KidneyComponent {
   showKIImage = 'data:image/png;base64,';
   show = false;
   showSpinner = false;
+  showError = '';
   constructor(private http: HttpClient) {}
   onFileSelected(event :any){
+    this.showError = '';
     let file:File = event.target.files[0];
       if (file && this.typeList.includes(file.type)) {
         const reader = new FileReader();
@@ -46,7 +48,9 @@ export class KidneyComponent {
           this.show = true;
           this.showSpinner = false;
 
-        })
+        },
+          error => {this.showSpinner = false;
+          this.showError = error.statusText;})
       }
 
   }
