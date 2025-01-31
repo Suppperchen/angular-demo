@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 设置两个 div 之间的间距 */
+}
+.box {
+  padding: 10px;
+  background-color: lightblue;
+  border: 1px solid blue;
+}

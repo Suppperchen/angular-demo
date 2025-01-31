@@ -1,5 +1,5 @@
 <div *ngIf="!showSpinner">
-<h4>Please upload every time only one image (retinal-vessel)!</h4>
+<h4>Please upload every time only one image (retinal-vessel) with type PNG or JPG!</h4>
 <div>
   <input type="file" class="file-input"
        (change)="onFileSelected($event)">
@@ -11,13 +11,27 @@
 <div *ngIf="warningMessage!=''">{{warningMessage}}</div>
 
 <div style="color:red;" *ngIf="showError!=''">{{showError}}</div>
-<img *ngIf="show"
-  [src]="showKIImage"
-/>
+<!--<img *ngIf="show"-->
+<!--  [src]="showKIImage"-->
+<!--/>-->
 
-<img *ngIf="show"
-  [src]="imageBase64"
-/>
+<!--<img *ngIf="show"-->
+<!--  [src]="imageBase64"-->
+<!--/>-->
+<div class="container" *ngIf="show">
+
+  <div class="box">
+  <img [src]="showKIImage"/>
+  <h4>Input Image</h4>
+  </div>
+
+  <div class="box">
+  <img [src]="imageBase64"/>
+  <h4>Output Image</h4>
+  </div>
+</div>
+
+
 
 </div>
 
