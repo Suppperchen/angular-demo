@@ -43,7 +43,7 @@ export class HandwriteComponent implements OnInit{
       const basestring = base64Data.substring(index+1);
       var dataJson = {"image":basestring};
 
-      const upload$ = this.http.post<any>("http://localhost:5000/handwrite", dataJson);
+      const upload$ = this.http.post<any>(" http://209.38.185.255/handwrite", dataJson);
       this.show = true;
 
       upload$.subscribe(res =>{

@@ -45,7 +45,7 @@ export class EyeComponent {
         let index = this.imageBase64.indexOf(',');
         const basestring = this.imageBase64.substring(index+1);
         var dataJson = {"image":basestring}
-        const upload$ = this.http.post<any>("http://localhost:5000/post-retinal-vessel", dataJson);
+        const upload$ = this.http.post<any>("http://209.38.185.255/post-retinal-vessel", dataJson);
         upload$.subscribe(res =>{
           this.showKIImage = 'data:image/png;base64,'+res.KIImage;
           this.show = true;

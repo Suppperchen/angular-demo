@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  gap: 10px; /* 设置两个 div 之间的间距 */
+  gap: 10px;
 }
 .box {
   padding: 10px;
